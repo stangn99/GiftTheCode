@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+  componentDidMount() {
+    // This is a promise
+    axios.get('/healthcheck')
+    .then(res => {
+      console.log(res);      
+    })
+    .catch(err => {
+      console.log(err);      
+    })
+  }
+
+
   render() {
     return (
       <div className="App">
